@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def product2
-    render json: Product.find_by(name: "Foobar").as_json
+    render json: Product.find_by(name: "Thingy").as_json
   end
 
   def product3
