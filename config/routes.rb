@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get "/product1" => "products#product1"
   get "/product2" => "products#product2"
   get "/product3" => "products#product3"
+  get "/any_product/#product_key" => "products#any_product"
 end

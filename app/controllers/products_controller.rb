@@ -14,4 +14,10 @@ class ProductsController < ApplicationController
   def product3
     render json: Product.find_by(name: "Gadget").as_json
   end
+
+  def any_product
+    input = params["name"]
+    product = Product.find_by(name: input)
+    render json: product.as_json
+  end
 end
