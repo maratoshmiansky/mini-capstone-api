@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Product.destroy_all
 
 product1 = Product.create(name: "Widget", price: 13, image_url: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.economist.com%2Fsites%2Fdefault%2Ffiles%2Fimages%2Fprint-edition%2F20150905_TQP001_0.jpg&imgrefurl=https%3A%2F%2Fwww.economist.com%2Ftechnology-quarterly%2F2015%2F09%2F03%2Fwonderful-widgets&tbnid=sbyVTCPfTmdISM&vet=12ahUKEwjXm4DS6JzxAhVCbK0KHeWyAvkQMygHegUIARC0AQ..i&docid=4g7jwHMlOAVL7M&w=595&h=335&itg=1&q=widget&hl=en-GB&ved=2ahUKEwjXm4DS6JzxAhVCbK0KHeWyAvkQMygHegUIARC0AQ", description: "Manufactured with pride!")
 
