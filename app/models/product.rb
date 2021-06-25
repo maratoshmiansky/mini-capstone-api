@@ -5,9 +5,11 @@ class Product < ApplicationRecord
   validates :description, presence: true
   # validates :active, presence: true
 
-  def supplier # allows me to do product.supplier
-    Supplier.find_by(id: supplier_id)
-  end
+  # def supplier # allows me to do product.supplier
+  #   Supplier.find_by(id: supplier_id)
+  # end
+
+  belongs_to :supplier  # replaces the above method
 
   def is_discounted?
     price < 10 # returns true if price < 10 and returns false otherwise
