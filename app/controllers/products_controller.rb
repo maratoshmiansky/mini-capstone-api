@@ -20,9 +20,7 @@ class ProductsController < ApplicationController
     if product.save
       render json: product
     else
-      render json: { errors: product.errors.full_messages }
-      # status: :unprocessable_entity
-      status: 418  # teapot
+      render json: { errors: product.errors.full_messages }, status: 418  # teapot
     end
   end
 
@@ -35,8 +33,7 @@ class ProductsController < ApplicationController
     if product.save
       render json: product
     else
-      render json: { errors: product.errors.full_messages }
-      status: :unprocessable_entity
+      render json: { errors: product.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
