@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  # def index
+  #   users = User.all
+  #   render json: users.as_json  # need to create a User serializer
+  # end
+
   def create
     user = User.new(
       name: params[:name],
