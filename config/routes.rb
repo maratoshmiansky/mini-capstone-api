@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   patch "/products/:id" => "products#update"
   delete "/products/:id" => "products#destroy"
 
-  # get "/users" => "users#index"
+  get "/users" => "users#index"
+  get "/users/:id" => "users#show"
   post "/users" => "users#create"
 
   post "/sessions" => "sessions#create"
