@@ -1,8 +1,8 @@
 class Product < ApplicationRecord
-  validates :name, uniqueness: true
   validates :name, presence: true
+  validates :name, uniqueness: true
   validates :price, numericality: { greater_than: 0 }  # numericality tests presence, too
-  validates :description, presence: true
+  # validates :description, presence: true
   # validates :active, presence: true
 
   # def supplier # allows me to do product.supplier
