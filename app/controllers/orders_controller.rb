@@ -5,8 +5,12 @@ class OrdersController < ApplicationController
   end
 
   def show
-    order = Order.find(params[:id])
-    render json: order
+    if current_user
+      order = current_user.orders.find_by(id: params[:id])  # only want to see the current logged in user's order
+      render json: order
+    else
+      render json: []  # change this to show a not logged in error message
+    end
   end
 
   def create
