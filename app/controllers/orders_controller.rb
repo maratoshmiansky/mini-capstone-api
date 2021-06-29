@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
       total: params[:total],
     )
     if order.save
-      render json: { message: "User created successfully" }, status: :created
+      render json: { message: "Order created successfully" }, status: :created
     else
       render json: { errors: order.errors.full_messages }, status: :bad_request
     end
