@@ -10,11 +10,11 @@ class Product < ApplicationRecord
   # end
 
   belongs_to :supplier  # replaces the above method
-  has_many :carted_products
-  has_many :orders, through: :carted_products
-  has_many :users, through: :carted_products
   has_many :category_products
   has_many :categories, through: :category_products
+  has_many :carted_products
+  has_many :orders, through: :carted_products
+  # has_many :users, through: :carted_products
 
   def is_discounted?
     price < 10 # returns true if price < 10 and returns false otherwise
