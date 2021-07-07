@@ -3,11 +3,12 @@ class OrdersController < ApplicationController
 
   def index
     # orders = Order.all
-    orders = current_user.orders.all
+    orders = current_user.orders.all  # only want to see the current logged in user's orders
     render json: orders
   end
 
   def show
+    # order = Order.find_by(id: params[:id])
     order = current_user.orders.find_by(id: params[:id])  # only want to see the current logged in user's order
     render json: order
   end

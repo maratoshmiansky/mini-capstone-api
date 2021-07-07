@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   def index
     users = User.all
-    render json: users.as_json  # need to create a User serializer
+    render json: users
   end
 
   def show
     user = User.find(params[:id])
-    render json: user.as_json
+    render json: user
   end
 
   def create
