@@ -1,5 +1,5 @@
 class CartedProductsController < ApplicationController
-  before_action :authenticate_user
+  # before_action :authenticate_user
 
   def index
     carted_products = current_user.carted_products.where(status: "carted")
@@ -18,5 +18,12 @@ class CartedProductsController < ApplicationController
     else
       render json: { errors: carted_product.errors.full_messages }, status: :unauthorized
     end
+  end
+
+  def destroy
+    carted_product = CartedProduct.find(params[:id])
+    carted_product.status = "removed"
+    carted_product.save
+    render json: { message: "Carted product successfully removed!" }
   end
 end
